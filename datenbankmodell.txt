@@ -1,0 +1,48 @@
+GET /regisseure
+GET /dirigent
+GET /genres
+GET /veranstaltungen:
+? ids von regisseuren dirigenten genres? 
+alle daten 
+
+
+
+Genres
+-> Bezeichnung
+-> ID PK
+
+Languages
+-> ID
+-> Bezeichnung 
+
+Verfügbarkeit
+-> ID
+-> Wert
+-> Bezeichnung
+
+Veranstalter
+-> ID 
+-> Benutzername
+-> Passwort
+-> Regie Freitexte 
+-> Email Adresse
+-> IstChef 
+
+Regisseure
+-> ID
+-> Vorname
+-> Nachname
+
+Dirigent
+-> ID
+-> Vorname
+-> Nachname
+
+Typen
+-> ID
+-> Bezeichnung
+
+
+Veranstaltung_Veranstalter
+Veranstaltung_ID (PK)
+Veranstalter_ID (PK)
