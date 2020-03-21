@@ -1,2 +1,24 @@
-{{dasEvent.name}}
-<img [src]="bildLink" alt="vorschau"/>
+
+
+
+
+<div class="dasEventContainer">
+  <div class="itemDate">
+    <div class="itemDateDay">27</div>
+    <div class="itemDateMonth">March</div>
+</div>
+
+  <div class="itemPicture">
+    <img [src]="bildLink" alt="vorschau"/>
+</div>
+
+  <div class="itemEventinfo">
+    {{dasEvent.name}}
+    <p>some text</p>
+    <div class="itemEventinfoMore">Lorem ipsum dolor sit amet, consetetur sadillllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooollllpscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+  </div>
+
+  <div class="itemCheckbox">
+    <input type="checkbox" id="merken" name="merken" value={{dasEvent.name}}>
+  </div>
+</div>
