@@ -1,14 +1,18 @@
 <div class="searchMenu-flex-container">
-<app-auto-complete class="searchMenu-element searchMenu-willIch"
-  [label]="'Will ich'"
-  placeholder="Will ich"
-  [mappingFunction]="suggestForInput"
-></app-auto-complete>
-<app-auto-complete class="searchMenu-element searchMenu-willIchNicht"
-  [label]="'Will ich nicht'"
-  placeholder="Will ich nicht"
-  [mappingFunction]="suggestForInput"
-></app-auto-complete>
+  <app-auto-complete class="searchMenu-element searchMenu-willIch"
+                     [label]="'Will ich'"
+                     placeholder="Will ich"
+                     [mappingFunction]="suggestForInput"
+                     (value)="willIchValue = $event"
+                     (enterPressed)="sucheAlles()"
+  ></app-auto-complete>
+  <app-auto-complete class="searchMenu-element searchMenu-willIchNicht"
+                     [label]="'Will ich nicht'"
+                     placeholder="Will ich nicht"
+                     [mappingFunction]="suggestForInput"
+                     (value)="willIchNichtValue = $event"
+                     (enterPressed)="sucheAlles()"
+  ></app-auto-complete>
   <div class="searchMenu-element favouriteCounter">
     0
   </div>

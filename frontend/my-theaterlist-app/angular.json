@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "my-theaterlist-app"
+  "defaultProject": "my-theaterlist-app",
+  "cli": {
+    "analytics": "f6803eaf-463c-4f12-b7a7-d3964fb0d7d6"
+  }
 }

@@ -1,6 +1,5 @@
-<app-search-menu></app-search-menu>
-<div class="event-flex-container">
-  <app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents | async"
-[dasEvent]="einzelnesEvent" class="singleEvent">
-  </app-einzelnes-event>
-</div>
+<app-search-menu (gefundeneEvents)="updateAlleEvents($event)"></app-search-menu>
+
+<app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents"
+                     [dasEvent]="einzelnesEvent">
+</app-einzelnes-event>

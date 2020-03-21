@@ -5,6 +5,7 @@
          matInput
          [formControl]="formControl"
          [matAutocomplete]="autocomplete"
+         (keydown.enter)="onEnter($event.target.value)"
   >
   <mat-autocomplete #autocomplete>
     <mat-option *ngFor="let option of options$ | async" [value]="option">
