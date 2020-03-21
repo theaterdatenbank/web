@@ -8,10 +8,9 @@
     <img [src]="bildLink" alt="vorschau"/>
   </div>
 
-  <div class="itemEventinfo">
+  <div class="itemEventinfo" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
     {{dasEvent.eventName}}
     <p>some text</p>
-    {{isInfoMooreHidden}}
 
     <div class="itemEventinfoMore" [hidden]="isInfoMooreHidden">Lorem ipsum dolor sit amet, consetetur
       sadillllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooollllpscing
