@@ -6,7 +6,7 @@ export class Event {
   public constructor(
     public eventDate: string,
     public eventName: string,
-    public subTitle: string,
+    public subtitle: string,
     public genre: string,
     public eventText: string,
     public organistion: Organiser,

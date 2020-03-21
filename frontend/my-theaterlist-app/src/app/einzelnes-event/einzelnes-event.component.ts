@@ -13,7 +13,7 @@ export class EinzelnesEventComponent implements OnInit {
   public isInfoMooreHidden: boolean;
 
   constructor() {
-    this.isInfoMooreHidden = true;
+ this.isInfoMooreHidden = true;
   }
 
   public get bildLink() {

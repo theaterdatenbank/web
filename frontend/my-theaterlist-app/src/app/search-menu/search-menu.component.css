@@ -1,29 +1,30 @@
-.searchMenu-flex-container{
-  display:flex;
+.searchMenu-flex-container {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
   padding: 5px;
 }
 
-.searchMenu-element{
+.searchMenu-element {
   border-radius: 8px;
   border: 2px solid;
   padding-left: 5px;
   padding-right: 5px;
 
 }
-.searchMenu-willIch{
+
+.searchMenu-willIch {
   border-color: #00b649;
   background: #59c55e;
 }
 
-.searchMenu-willIchNicht{
+.searchMenu-willIchNicht {
   border-color: #ef0002;
   background: #fb9296;
 }
 
-.favouriteCounter{
+.favouriteCounter {
   border-color: black;
   font-family: Impact;
   font-size: xx-large;

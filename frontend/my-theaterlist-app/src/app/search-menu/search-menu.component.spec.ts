@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SearchMenuComponent } from './search-menu.component';
+import {SearchMenuComponent} from './search-menu.component';
 
 describe('SearchMenuComponent', () => {
   let component: SearchMenuComponent;
@@ -8,9 +8,9 @@ describe('SearchMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchMenuComponent ]
+      declarations: [SearchMenuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
