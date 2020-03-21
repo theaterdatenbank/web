@@ -26,6 +26,12 @@ namespace Theateranmeldung.Web.Controllers
             return _eventRepository.GetEvents();
         }
 
+        [HttpGet("genres")]
+        public List<Genre> Genres()
+        {
+            return _eventRepository.GetGenres();
+        }
+
         [HttpGet("events_filtered")]
         public List<Event> EventsFiltered(string wanted, string notwanted)
         {

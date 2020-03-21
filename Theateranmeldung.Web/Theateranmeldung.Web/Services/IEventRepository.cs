@@ -13,5 +13,6 @@ namespace Theateranmeldung.Web.Services
         List<Event> GetEventsFiltered(string wanted, string notwanted);
         void CreateIndex();
         void AddGenre(Genre genreData);
+        List<Genre> GetGenres();
     }
 }
