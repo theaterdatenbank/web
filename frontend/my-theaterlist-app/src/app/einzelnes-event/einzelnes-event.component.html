@@ -4,18 +4,19 @@
     <div class="itemDateMonth">March</div>
   </div>
 
-  <div class="itemPicture">
+  <div class="itemPicture" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
     <img [src]="bildLink" alt="vorschau"/>
   </div>
 
-  <div class="itemEventinfo">
+  <div class="itemEventinfo" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
     {{dasEvent.eventName}}
     <p>{{dasEvent.subtitle}}</p>
-    <div class="itemEventinfoMore">{{dasEvent.eventText}}</div>
+
+    <div class="itemEventinfoMore" [hidden]="isInfoMooreHidden">{{dasEvent.eventText}}
+    </div>
   </div>
 
   <div class="itemCheckbox">
     <input type="checkbox" id="merken" name="merken" value={{dasEvent.eventName}}>
   </div>
-
 </div>

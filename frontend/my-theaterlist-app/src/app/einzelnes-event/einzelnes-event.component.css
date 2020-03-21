@@ -18,9 +18,9 @@
 .itemDateDay {
 
   align-items: center;
-  font-size: 200%;
-  order: 0;
-}
+  font-size: 300%;
+  order: 0;}
+
 
 .itemDateMonth {
   font-size: medium;
@@ -41,7 +41,7 @@
   flex: 1 1 auto;
 }
 
-.EventinfoMore {
+.itemEventinfoMore {
   color: aqua;
   order: 2;
 }
