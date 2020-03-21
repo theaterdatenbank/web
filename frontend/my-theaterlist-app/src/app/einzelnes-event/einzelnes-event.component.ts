@@ -11,9 +11,11 @@ export class EinzelnesEventComponent implements OnInit {
   @Input("dasEvent")
   public dasEvent: Event;
 
-  constructor() { }
+  constructor() { this.isInfoMooreHidden=true;}
 
-  public get bildLink() {
+public isInfoMooreHidden : boolean;
+
+public get bildLink() {
     return this.dasEvent.thumbnail || "TODO: Default bild";
   }
 
@@ -21,3 +23,4 @@ export class EinzelnesEventComponent implements OnInit {
   }
 
 }
+
