@@ -14,7 +14,7 @@ export class EinzelnesEventComponent implements OnInit {
   constructor() { }
 
   public get bildLink() {
-    return this.dasEvent.linkZuVorschauBild || "TODO: Default bild";
+    return this.dasEvent.thumbnail || "TODO: Default bild";
   }
 
   ngOnInit(): void {
