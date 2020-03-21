@@ -4,14 +4,14 @@
   <div class="itemDate">
     <div class="itemDateDay">27</div>
     <div class="itemDateMonth">March</div>
-</div>
+  </div>
 
   <div class="itemPicture" (click)="this.isInfoMooreHidden =!this.isInfoMoreHidden">
     <img [src]="bildLink" alt="vorschau"/>
-</div>
+  </div>
 
   <div class="itemEventinfo">
-    {{dasEvent.name}}
+    {{dasEvent.eventName}}
     <p>some text</p>
 {{isInfoMooreHidden}}
 
@@ -19,7 +19,8 @@
   </div>
 
   <div class="itemCheckbox">
-    <input type="checkbox" id="merken" name="merken" value={{dasEvent.name}}>
+    <input type="checkbox" id="merken" name="merken" value={{dasEvent.eventName}}>
   </div>
 </div>
 
+</div>
