@@ -11,7 +11,8 @@ export class EinzelnesEventComponent implements OnInit {
   @Input()
   public dasEvent: Event;
 
-  constructor() { }
+  constructor() {
+  }
 
   public get bildLink() {
     return this.dasEvent.thumbnail || 'TODO: Default bild';

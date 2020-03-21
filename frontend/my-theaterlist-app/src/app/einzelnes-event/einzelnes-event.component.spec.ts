@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EinzelnesEventComponent } from './einzelnes-event.component';
+import {EinzelnesEventComponent} from './einzelnes-event.component';
 
 describe('EinzelnesEventComponent', () => {
   let component: EinzelnesEventComponent;
@@ -8,9 +8,9 @@ describe('EinzelnesEventComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EinzelnesEventComponent ]
+      declarations: [EinzelnesEventComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

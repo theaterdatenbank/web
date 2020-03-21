@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EventAnsichtComponent } from './event-ansicht.component';
+import {EventAnsichtComponent} from './event-ansicht.component';
 
 describe('EventAnsichtComponent', () => {
   let component: EventAnsichtComponent;
@@ -8,9 +8,9 @@ describe('EventAnsichtComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventAnsichtComponent ]
+      declarations: [EventAnsichtComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

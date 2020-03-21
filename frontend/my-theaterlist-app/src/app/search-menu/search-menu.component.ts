@@ -1,18 +1,18 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from "@angular/core";
-import {Observable} from "rxjs";
-import {ajaxGet} from "rxjs/internal-compatibility";
-import {map, take} from "rxjs/operators";
-import {Genre} from "./Genre";
-import {Event} from "../einzelnes-event/Event";
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ajaxGet} from 'rxjs/internal-compatibility';
+import {map, take} from 'rxjs/operators';
+import {Genre} from './Genre';
+import {Event} from '../einzelnes-event/Event';
 
 @Component({
-  selector: "app-search-menu",
-  templateUrl: "./search-menu.component.html",
-  styleUrls: ["./search-menu.component.css"]
+  selector: 'app-search-menu',
+  templateUrl: './search-menu.component.html',
+  styleUrls: ['./search-menu.component.css']
 })
 export class SearchMenuComponent implements OnInit, OnDestroy {
 
-  @Output("gefundeneEvents")
+  @Output()
   public gefundeneEvents: EventEmitter<Event[]> = new EventEmitter<Event[]>();
   public willIchValue: string;
   public willIchNichtValue: string;
@@ -21,10 +21,14 @@ export class SearchMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.willIchValue = '';
+    this.willIchNichtValue = '';
+    this.sucheAlles();
+
   }
 
   public suggestForInput(input: string): Observable<string[]> {
-    return ajaxGet("http://florianscholz.net:5000/api/ajax/genres")
+    return ajaxGet('http://florianscholz.net:5000/api/ajax/genres')
       .pipe(
         take(1),
         map(response => response.response as Genre[]),
