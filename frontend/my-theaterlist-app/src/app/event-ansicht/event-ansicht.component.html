@@ -1,0 +1,5 @@
+<app-search-menu></app-search-menu>
+
+<app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents | async"
+[dasEvent]="einzelnesEvent">
+</app-einzelnes-event>
