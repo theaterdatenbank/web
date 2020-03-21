@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {Event} from "./Event";
+import {Component, Input, OnInit} from '@angular/core';
+import {Event} from './Event';
 
 @Component({
   selector: 'app-einzelnes-event',
@@ -8,13 +8,13 @@ import {Event} from "./Event";
 })
 export class EinzelnesEventComponent implements OnInit {
 
-  @Input("dasEvent")
+  @Input()
   public dasEvent: Event;
 
   constructor() { }
 
   public get bildLink() {
-    return this.dasEvent.thumbnail || "TODO: Default bild";
+    return this.dasEvent.thumbnail || 'TODO: Default bild';
   }
 
   ngOnInit(): void {
