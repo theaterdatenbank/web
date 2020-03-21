@@ -1,12 +1,15 @@
 export class Event {
-  public name: string;
-  public beschreibung: string;
-  public linkZuVorschauBild: string;
+  //Titel, Subtitel, Bild, Veranstalter, StreamLink, Datum ?
 
-  public constructor(name: string, beschreibung: string, linkZuVorschaubild: string) {
-    this.name = name;
-    this.beschreibung = beschreibung;
-    this.linkZuVorschauBild = linkZuVorschaubild;
+  public constructor(
+    public datum: Date | number,
+    public titel: string,
+    public subTitel: string,
+    public volltext: string,
+    public veranstalter: string,
+    public linkZuVorschauBild: string,
+    public linkZuStream: string
+  ) {
   }
 
 }
