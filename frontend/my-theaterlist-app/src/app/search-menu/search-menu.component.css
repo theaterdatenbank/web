@@ -1,0 +1,32 @@
+.searchMenu-flex-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 5px;
+}
+
+.searchMenu-element{
+  border-radius: 8px;
+  border: 2px solid;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+.searchMenu-willIch{
+  border-color: #00b649;
+  background: #59c55e;
+}
+
+.searchMenu-willIchNicht{
+  border-color: #ef0002;
+  background: #fb9296;
+}
+
+.favouriteCounter{
+  border-color: black;
+  font-family: Impact;
+  font-size: xx-large;
+  display: flex;
+  padding: 10px;
+}

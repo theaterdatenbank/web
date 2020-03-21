@@ -1,12 +1,16 @@
+import {Organiser} from "./Organiser";
+
 export class Event {
-  public name: string;
-  public beschreibung: string;
-  public linkZuVorschauBild: string;
+  //Titel, Subtitel, Bild, Veranstalter, StreamLink, Datum ?
 
-  public constructor(name: string, beschreibung: string, linkZuVorschaubild: string) {
-    this.name = name;
-    this.beschreibung = beschreibung;
-    this.linkZuVorschauBild = linkZuVorschaubild;
+  public constructor(
+    public eventDate: Date | number,
+    public eventName: string,
+    public subTitle: string,
+    public eventText: string,
+    public organistion: Organiser,
+    public thumbnail: string,
+    public streamingLink: string
+  ) {
   }
-
 }
