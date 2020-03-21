@@ -1,5 +1,5 @@
-<app-search-menu></app-search-menu>
+<app-search-menu (gefundeneEvents)="updateAlleEvents($event)"></app-search-menu>
 
-<app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents | async"
-[dasEvent]="einzelnesEvent">
+<app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents"
+                     [dasEvent]="einzelnesEvent">
 </app-einzelnes-event>
