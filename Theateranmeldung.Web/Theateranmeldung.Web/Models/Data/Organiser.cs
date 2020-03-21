@@ -2,6 +2,6 @@
 {
     public class Organiser
     {
-        public string OrganiserName { get; set; }
+        public string Name { get; set; }
     }
 }

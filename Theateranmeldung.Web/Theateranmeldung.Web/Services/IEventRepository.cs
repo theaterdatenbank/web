@@ -12,5 +12,6 @@ namespace Theateranmeldung.Web.Services
         void AddEvent(Event eventData);
         List<Event> GetEventsFiltered(string wanted, string notwanted);
         void CreateIndex();
+        void AddGenre(Genre genreData);
     }
 }

@@ -14,6 +14,7 @@ namespace Theateranmeldung.Web.Services
     public class EventRepository : IEventRepository
     {
         private readonly IMongoCollection<Event> _events;
+        private readonly IMongoCollection<Genre> _genres;
 
         public EventRepository(IEventStoreSettings settings)
         {
@@ -21,11 +22,17 @@ namespace Theateranmeldung.Web.Services
             var database = client.GetDatabase(settings.DatabaseName);
 
             _events = database.GetCollection<Event>(settings.EventsCollectionName);
+            _genres = database.GetCollection<Genre>(settings.GenresCollectionName);
         }
 
         public List<Event> GetEvents()
         {
             return _events.Find(m => m.Approved).ToList();
+        }
+
+        public List<Genre> GetGenres()
+        {
+            return _genres.Find(_ => true).ToList();
         }
 
         public List<Event> GetEventById(string eventId)
@@ -36,6 +43,11 @@ namespace Theateranmeldung.Web.Services
         public void AddEvent(Event eventData)
         {
             _events.InsertOne(eventData);
+        }
+
+        public void AddGenre(Genre genreData)
+        {
+            _genres.InsertOne(genreData);
         }
 
         public List<Event> GetEventsFiltered(string wanted, string notwanted)

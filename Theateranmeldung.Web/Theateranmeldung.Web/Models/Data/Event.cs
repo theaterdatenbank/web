@@ -17,6 +17,11 @@ namespace Theateranmeldung.Web.Models.Data
         public DateTime EventDate { get; set; }
 
         public string StreamingLink { get; set; }
+
+        public string Subtitle { get; set; }
+
+        public string Genre { get; set; }
+
         public TimeSpan Length { get; set; }
 
         public bool LongTimeAvailable { get; set; }
