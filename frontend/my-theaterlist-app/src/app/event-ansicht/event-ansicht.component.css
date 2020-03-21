@@ -1,0 +1,8 @@
+.event-flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.singleEvent{
+  background-color: #86cfda;
+}
