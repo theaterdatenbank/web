@@ -644,19 +644,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "day",
         get: function get() {
           var date = new Date(this.dasEvent.eventDate);
-          return date.getUTCDate();
+          return date.getUTCDate() + 1;
         }
       }, {
         key: "month",
         get: function get() {
           var date = new Date(this.dasEvent.eventDate);
           var months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
-          return months[date.getUTCMonth() - 1];
+          return months[date.getUTCMonth()];
         }
       }, {
         key: "bildLink",
         get: function get() {
-          return this.dasEvent.thumbnail || "TODO: Default bild";
+          return this.dasEvent.thumbnail + ".png";
         }
       }]);
 

@@ -356,15 +356,15 @@ class EinzelnesEventComponent {
     }
     get day() {
         const date = new Date(this.dasEvent.eventDate);
-        return date.getUTCDate();
+        return date.getUTCDate() + 1;
     }
     get month() {
         const date = new Date(this.dasEvent.eventDate);
         const months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
-        return months[date.getUTCMonth() - 1];
+        return months[date.getUTCMonth()];
     }
     get bildLink() {
-        return this.dasEvent.thumbnail || "TODO: Default bild";
+        return this.dasEvent.thumbnail + ".png";
     }
     ngOnInit() {
     }
