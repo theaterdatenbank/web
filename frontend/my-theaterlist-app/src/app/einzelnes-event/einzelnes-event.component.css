@@ -57,8 +57,10 @@
         order: 2;
         box-sizing: border-box;
       }
-.Check{
+.Check {
   flex-grow: 10%;
+}
+
 .itemEventinfo {
   order: 2;
   background-color: #d6d2d3;
