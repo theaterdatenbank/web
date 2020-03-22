@@ -1,12 +1,12 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable, of, Subject} from 'rxjs';
-import {debounceTime, distinctUntilChanged, switchMap, takeUntil} from 'rxjs/operators';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from "@angular/core";
+import {FormControl} from "@angular/forms";
+import {Observable, of, Subject} from "rxjs";
+import {debounceTime, distinctUntilChanged, switchMap, takeUntil} from "rxjs/operators";
 
 @Component({
-  selector: 'app-auto-complete',
-  templateUrl: './auto-complete.component.html',
-  styleUrls: ['./auto-complete.component.css']
+  selector: "app-auto-complete",
+  templateUrl: "./auto-complete.component.html",
+  styleUrls: ["./auto-complete.component.css"]
 })
 export class AutoCompleteComponent implements OnInit, OnDestroy {
   @Input()

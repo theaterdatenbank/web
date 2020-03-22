@@ -11,13 +11,13 @@ export class EinzelnesEventComponent implements OnInit {
 
   @Input()
   public dasEvent: Event;
-  public isInfoMooreHidden: boolean;
+
+  constructor() { this.isInfoMooreHidden=true;}
+
+public isInfoMooreHidden : boolean;
 
   @Output()
   public checkedEvent: EventEmitter<string> = new EventEmitter<string>();
-  constructor() {
- this.isInfoMooreHidden = true;
-  }
 
   public get day(){
     const date: Date = new Date(this.dasEvent.eventDate);

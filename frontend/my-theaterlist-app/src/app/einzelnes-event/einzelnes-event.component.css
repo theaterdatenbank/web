@@ -3,54 +3,68 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 5%;
-  width: 70%;
-  max-height: 10%;
-
-
+  height:10%;
+  box-sizing: border-box;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
-.itemDate {
-  order: 0;
-  background-color: #cce5ff;
+.Event{
+  width: 90%;
+  text-align: left;
   height: 100%;
-  font-family: Impact;
+  box-sizing: border-box;
 }
 
-.itemDateDay {
+  .itemDate{
+    order: 0;
+    text-align:center;
+    flex-grow:5%;
+    float: left;
+  }
 
-  align-items: center;
+      .itemDateDay{
+        box-sizing: border-box;
+        text-align: center;
+        align-items: flex-start;
+        order: 0;
+        font-size: 300%;
+      }
+      .itemDateDay7{
+        font-size: medium;
+        order: 0;
+      }
 
-  font-size: 250%;
-  order: 0;}
-
-
-.itemDateMonth {
-  font-size: medium;
-  order: 0;
-
-}
-
-.itemPicture {
+  .itemPicture{
   order: 1;
-  background-color: yellow;
-}
-
-.itemEventinfo {
-  order: 2;
-  background-color: #cce5ff;
+  width:5%;
   float: left;
-  overflow: none;
-  flex: 1 1 auto;
+  }
+
+  .itemEventinfo{
+    box-sizing: border-box;
+    order: 2;
+    background-color: f8fcfe;
+    float: left;
+    overflow: none;
+    flex: 1 1 auto;
+    width:  80%;
+  }
+      .itemEventinfoMoore{
+        order: 2;
+        box-sizing: border-box;
+      }
+.Check{
+  flex-grow: 10%;
 }
 
-.itemEventinfoMore {
-  color: #cce5ff;
-  order: 2;
-  white-space: pre-wrap;
-}
-
-.itemCheckbox {
+  .itemCheckbox{
   order: 3;
-  align-items: flex-end;
-  background-color: green;
-}
+  align-items: center;
+  -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  transform: scale(3);
+  }
