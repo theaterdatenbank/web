@@ -11,7 +11,7 @@ import {TimeSpan} from '../einzelnes-event/TimeSpan';
 export class EventAnsichtComponent implements OnInit {
 
   public alleEvents: Event[];
-  private checkedEvents: string[];
+  private checkedEvents: string[] = [];
 
   @Output()
   public eventCounter: number;
