@@ -45,6 +45,7 @@
 .itemEventinfoMore {
   color: aqua;
   order: 2;
+  white-space: pre-wrap;
 }
 
 .itemCheckbox {

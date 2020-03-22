@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Components.Forms;
 using MongoDB.Bson;
@@ -52,28 +53,41 @@ namespace Theateranmeldung.Web.Services
 
         public List<Event> GetEventsFiltered(string wanted, string notwanted)
         {
-            
-            var wantedEscape = Regex.Escape(wanted ?? string.Empty);
-            var notwantedEscape = Regex.Escape(notwanted ?? string.Empty);
+            var wantedTokens = string.IsNullOrWhiteSpace(wanted) ? new List<string>() : wanted.Split(' ').ToList().ConvertAll(m => Regex.Escape(m));
+            var notWantedTokens = string.IsNullOrWhiteSpace(notwanted) ? new List<string>() : notwanted.Split(' ').ToList().ConvertAll(m => Regex.Escape(m));
 
-                var builder = Builders<Event>.Filter;
+            var builder = Builders<Event>.Filter;
 
-                var filter = builder.Empty;
-                if (!string.IsNullOrEmpty(wanted))
-                {
-                    filter = builder.Or(builder.Regex(m => m.EventName, new BsonRegularExpression(wantedEscape)),
-                        builder.Regex(m => m.EventText, new BsonRegularExpression(wantedEscape)));
-                }
-
-                var otherFilter = builder.Not(builder.Or(builder.Regex(m => m.EventName, new BsonRegularExpression(notwantedEscape)),
-                builder.Regex(m => m.EventText, new BsonRegularExpression(notwantedEscape))));
-
-            if (!string.IsNullOrEmpty(notwanted))
+            FilterDefinition<Event> firstFilter, secondFilter;
+            if (!wantedTokens.Any())
             {
-                filter = builder.And(filter, otherFilter);
+                firstFilter = builder.Empty;
+            }
+            else
+            {
+                firstFilter = builder.Not(builder.Empty);
             }
 
-            return _events.Find(filter).ToList();
+            foreach (var wantedToken in wantedTokens)
+            {
+                firstFilter = builder.Or(firstFilter, 
+                    builder.Regex(m => m.EventName, new BsonRegularExpression(wantedToken, "i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(wantedToken, "i")),
+                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(wantedToken, "i")),
+                    builder.Regex(m => m.Genre, new BsonRegularExpression(wantedToken, "i")));
+            }
+
+            foreach (var notWantedToken in notWantedTokens)
+            {
+                firstFilter = builder.And(firstFilter, builder.Not(builder.Or(
+                    builder.Regex(m => m.EventName, new BsonRegularExpression(notWantedToken, "i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(notWantedToken, "i")),
+                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(notWantedToken, "i")),
+                    builder.Regex(m => m.Genre, new BsonRegularExpression(notWantedToken, "i")))));
+
+            }
+
+            return _events.Find(_ => firstFilter.Inject()).ToList();
 
         }
 

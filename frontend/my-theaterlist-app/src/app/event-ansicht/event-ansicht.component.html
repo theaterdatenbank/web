@@ -1,5 +1,5 @@
-<app-search-menu (gefundeneEvents)="updateAlleEvents($event)"></app-search-menu>
+<app-search-menu (gefundeneEvents)="updateAlleEvents($event)" [count]="this.eventCounter"></app-search-menu>
 
 <app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents"
-                     [dasEvent]="einzelnesEvent">
+                     [dasEvent]="einzelnesEvent" (checkedEvent)="checkProvider($event)">
 </app-einzelnes-event>

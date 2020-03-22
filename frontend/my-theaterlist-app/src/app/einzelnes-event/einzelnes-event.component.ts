@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {Event} from "./Event";
+import {MatCheckboxChange} from "@angular/material/checkbox";
 
 @Component({
   selector: "app-einzelnes-event",
@@ -12,6 +13,8 @@ export class EinzelnesEventComponent implements OnInit {
   public dasEvent: Event;
   public isInfoMooreHidden: boolean;
 
+  @Output()
+  public checkedEvent: EventEmitter<string> = new EventEmitter<string>();
   constructor() {
  this.isInfoMooreHidden = true;
   }
@@ -23,5 +26,7 @@ export class EinzelnesEventComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkboxChanged($event: MatCheckboxChange) {
+        this.checkedEvent.emit($event.source.value)
+  }
 }
-
