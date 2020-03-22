@@ -72,7 +72,7 @@ namespace Theateranmeldung.Web.Services
             {
                 firstFilter = builder.Or(firstFilter, 
                     builder.Regex(m => m.EventName, new BsonRegularExpression(wantedToken, "i")),
-                    builder.Regex(m => m.EventText, new BsonRegularExpression(wantedToken+"i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(wantedToken, "i")),
                     builder.Regex(m => m.Subtitle, new BsonRegularExpression(wantedToken, "i")),
                     builder.Regex(m => m.Genre, new BsonRegularExpression(wantedToken, "i")));
             }
@@ -81,7 +81,7 @@ namespace Theateranmeldung.Web.Services
             {
                 firstFilter = builder.And(firstFilter, builder.Not(builder.Or(
                     builder.Regex(m => m.EventName, new BsonRegularExpression(notWantedToken, "i")),
-                    builder.Regex(m => m.EventText, new BsonRegularExpression(notWantedToken + "i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(notWantedToken, "i")),
                     builder.Regex(m => m.Subtitle, new BsonRegularExpression(notWantedToken, "i")),
                     builder.Regex(m => m.Genre, new BsonRegularExpression(notWantedToken, "i")))));
 
