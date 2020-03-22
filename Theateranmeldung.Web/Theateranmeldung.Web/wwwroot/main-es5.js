@@ -641,6 +641,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.checkedEvent.emit($event.source.value);
         }
       }, {
+        key: "day",
+        get: function get() {
+          var date = new Date(this.dasEvent.eventDate);
+          return date.getUTCDate();
+        }
+      }, {
+        key: "month",
+        get: function get() {
+          var date = new Date(this.dasEvent.eventDate);
+          var months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+          return months[date.getUTCMonth() - 1];
+        }
+      }, {
         key: "bildLink",
         get: function get() {
           return this.dasEvent.thumbnail || "TODO: Default bild";
@@ -664,7 +677,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         checkedEvent: "checkedEvent"
       },
       decls: 16,
-      vars: 6,
+      vars: 8,
       consts: [[1, "dasEventContainer"], [1, "itemDate"], [1, "itemDateDay"], [1, "itemDateMonth"], [1, "itemPicture", 3, "click"], ["alt", "vorschau", 3, "src"], [1, "itemEventinfo", 3, "click"], [1, "itemEventinfoMore", 3, "hidden"], [1, "itemCheckbox"], [3, "value", "change"]],
       template: function EinzelnesEventComponent_Template(rf, ctx) {
         if (rf & 1) {
@@ -674,13 +687,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "27");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "March");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -734,7 +747,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.day);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.month);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.bildLink, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
@@ -760,7 +781,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_material_checkbox__WEBPACK_IMPORTED_MODULE_1__["MatCheckbox"]],
-      styles: [".dasEventContainer[_ngcontent-%COMP%] {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: flex-start;\r\n  padding: 5%;\r\n  width: 70%;\r\n  max-height: 10%;\r\n\r\n\r\n}\r\n\r\n.itemDate[_ngcontent-%COMP%] {\r\n  order: 0;\r\n  background-color: aqua;\r\n  height: 100%;\r\n}\r\n\r\n.itemDateDay[_ngcontent-%COMP%] {\r\n\r\n  align-items: center;\r\n\r\n  font-size: 300%;\r\n  order: 0;}\r\n\r\n.itemDateMonth[_ngcontent-%COMP%] {\r\n  font-size: medium;\r\n  order: 0;\r\n\r\n}\r\n\r\n.itemPicture[_ngcontent-%COMP%] {\r\n  order: 1;\r\n  background-color: yellow;\r\n}\r\n\r\n.itemEventinfo[_ngcontent-%COMP%] {\r\n  order: 2;\r\n  background-color: blueviolet;\r\n  float: left;\r\n  overflow: none;\r\n  flex: 1 1 auto;\r\n}\r\n\r\n.itemEventinfoMore[_ngcontent-%COMP%] {\r\n  color: aqua;\r\n  order: 2;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.itemCheckbox[_ngcontent-%COMP%] {\r\n  order: 3;\r\n  align-items: flex-end;\r\n  background-color: green;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWluemVsbmVzLWV2ZW50L2VpbnplbG5lcy1ldmVudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwyQkFBMkI7RUFDM0IsV0FBVztFQUNYLFVBQVU7RUFDVixlQUFlOzs7QUFHakI7O0FBRUE7RUFDRSxRQUFRO0VBQ1Isc0JBQXNCO0VBQ3RCLFlBQVk7QUFDZDs7QUFFQTs7RUFFRSxtQkFBbUI7O0VBRW5CLGVBQWU7RUFDZixRQUFRLENBQUM7O0FBR1g7RUFDRSxpQkFBaUI7RUFDakIsUUFBUTs7QUFFVjs7QUFFQTtFQUNFLFFBQVE7RUFDUix3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxRQUFRO0VBQ1IsNEJBQTRCO0VBQzVCLFdBQVc7RUFDWCxjQUFjO0VBQ2QsY0FBYztBQUNoQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxRQUFRO0VBQ1IscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsUUFBUTtFQUNSLHFCQUFxQjtFQUNyQix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9laW56ZWxuZXMtZXZlbnQvZWluemVsbmVzLWV2ZW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFzRXZlbnRDb250YWluZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGZsZXgtc3RhcnQ7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG4gIHBhZGRpbmc6IDUlO1xyXG4gIHdpZHRoOiA3MCU7XHJcbiAgbWF4LWhlaWdodDogMTAlO1xyXG5cclxuXHJcbn1cclxuXHJcbi5pdGVtRGF0ZSB7XHJcbiAgb3JkZXI6IDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5pdGVtRGF0ZURheSB7XHJcblxyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gIGZvbnQtc2l6ZTogMzAwJTtcclxuICBvcmRlcjogMDt9XHJcblxyXG5cclxuLml0ZW1EYXRlTW9udGgge1xyXG4gIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4gIG9yZGVyOiAwO1xyXG5cclxufVxyXG5cclxuLml0ZW1QaWN0dXJlIHtcclxuICBvcmRlcjogMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB5ZWxsb3c7XHJcbn1cclxuXHJcbi5pdGVtRXZlbnRpbmZvIHtcclxuICBvcmRlcjogMjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBibHVldmlvbGV0O1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG92ZXJmbG93OiBub25lO1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG4uaXRlbUV2ZW50aW5mb01vcmUge1xyXG4gIGNvbG9yOiBhcXVhO1xyXG4gIG9yZGVyOiAyO1xyXG4gIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDtcclxufVxyXG5cclxuLml0ZW1DaGVja2JveCB7XHJcbiAgb3JkZXI6IDM7XHJcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xyXG59XHJcbiJdfQ== */"]
+      styles: [".dasEventContainer[_ngcontent-%COMP%] {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: flex-start;\r\n  padding: 5%;\r\n  width: 70%;\r\n  max-height: 10%;\r\n\r\n\r\n}\r\n\r\n.itemDate[_ngcontent-%COMP%] {\r\n  order: 0;\r\n  background-color: aqua;\r\n  height: 100%;\r\n  font-family: Impact;\r\n}\r\n\r\n.itemDateDay[_ngcontent-%COMP%] {\r\n\r\n  align-items: center;\r\n\r\n  font-size: 250%;\r\n  order: 0;}\r\n\r\n.itemDateMonth[_ngcontent-%COMP%] {\r\n  font-size: medium;\r\n  order: 0;\r\n\r\n}\r\n\r\n.itemPicture[_ngcontent-%COMP%] {\r\n  order: 1;\r\n  background-color: yellow;\r\n}\r\n\r\n.itemEventinfo[_ngcontent-%COMP%] {\r\n  order: 2;\r\n  background-color: blueviolet;\r\n  float: left;\r\n  overflow: none;\r\n  flex: 1 1 auto;\r\n}\r\n\r\n.itemEventinfoMore[_ngcontent-%COMP%] {\r\n  color: aqua;\r\n  order: 2;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.itemCheckbox[_ngcontent-%COMP%] {\r\n  order: 3;\r\n  align-items: flex-end;\r\n  background-color: green;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWluemVsbmVzLWV2ZW50L2VpbnplbG5lcy1ldmVudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwyQkFBMkI7RUFDM0IsV0FBVztFQUNYLFVBQVU7RUFDVixlQUFlOzs7QUFHakI7O0FBRUE7RUFDRSxRQUFRO0VBQ1Isc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixtQkFBbUI7QUFDckI7O0FBRUE7O0VBRUUsbUJBQW1COztFQUVuQixlQUFlO0VBQ2YsUUFBUSxDQUFDOztBQUdYO0VBQ0UsaUJBQWlCO0VBQ2pCLFFBQVE7O0FBRVY7O0FBRUE7RUFDRSxRQUFRO0VBQ1Isd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsUUFBUTtFQUNSLDRCQUE0QjtFQUM1QixXQUFXO0VBQ1gsY0FBYztFQUNkLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsUUFBUTtFQUNSLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLFFBQVE7RUFDUixxQkFBcUI7RUFDckIsdUJBQXVCO0FBQ3pCIiwiZmlsZSI6InNyYy9hcHAvZWluemVsbmVzLWV2ZW50L2VpbnplbG5lcy1ldmVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRhc0V2ZW50Q29udGFpbmVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuICBwYWRkaW5nOiA1JTtcclxuICB3aWR0aDogNzAlO1xyXG4gIG1heC1oZWlnaHQ6IDEwJTtcclxuXHJcblxyXG59XHJcblxyXG4uaXRlbURhdGUge1xyXG4gIG9yZGVyOiAwO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGFxdWE7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGZvbnQtZmFtaWx5OiBJbXBhY3Q7XHJcbn1cclxuXHJcbi5pdGVtRGF0ZURheSB7XHJcblxyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gIGZvbnQtc2l6ZTogMjUwJTtcclxuICBvcmRlcjogMDt9XHJcblxyXG5cclxuLml0ZW1EYXRlTW9udGgge1xyXG4gIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4gIG9yZGVyOiAwO1xyXG5cclxufVxyXG5cclxuLml0ZW1QaWN0dXJlIHtcclxuICBvcmRlcjogMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB5ZWxsb3c7XHJcbn1cclxuXHJcbi5pdGVtRXZlbnRpbmZvIHtcclxuICBvcmRlcjogMjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBibHVldmlvbGV0O1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG92ZXJmbG93OiBub25lO1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG4uaXRlbUV2ZW50aW5mb01vcmUge1xyXG4gIGNvbG9yOiBhcXVhO1xyXG4gIG9yZGVyOiAyO1xyXG4gIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDtcclxufVxyXG5cclxuLml0ZW1DaGVja2JveCB7XHJcbiAgb3JkZXI6IDM7XHJcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xyXG59XHJcbiJdfQ== */"]
     });
     /*@__PURE__*/
 
@@ -1232,9 +1253,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         gefundeneEvents: "gefundeneEvents",
         showCheckboxedEvents: "showCheckboxedEvents"
       },
-      decls: 6,
+      decls: 7,
       vars: 5,
-      consts: [["fxLayout", "row wrap", "fxLayoutGap", "32px", "fxLayoutAlign", "flex-start", "fxLayout.lt-sm", "column", 1, "searchMenu-flex-container"], ["fxFlex.lt-md", "0 1 calc(50% - 32px)", "fxFlex.lt-sm", "100%", 1, "searchMenu-element", "searchMenu-willIch"], ["placeholder", "Will ich", 3, "label", "mappingFunction", "value", "enterPressed"], ["fxFlex.lt-md", "0 1 calc(50% - 32px)", "fxFlex.lt-sm", "100%", 1, "searchMenu-element", "searchMenu-willIchNicht"], ["placeholder", "Will ich nicht", 3, "label", "mappingFunction", "value", "enterPressed"], [3, "count", "showSelectedEvents"]],
+      consts: [["fxLayout", "row wrap", "fxLayoutGap", "32px", "fxLayoutAlign", "flex-start", "fxLayout.lt-sm", "column", "fxFlex", "1 1 0", 1, "searchMenu-flex-container"], ["fxFlex.lt-md", "0 1 calc(50% - 32px)", "fxFlex.lt-sm", "100%", 1, "searchMenu-element", "searchMenu-willIch"], ["placeholder", "Will ich", 3, "label", "mappingFunction", "value", "enterPressed"], ["fxFlex.lt-md", "0 1 calc(50% - 32px)", "fxFlex.lt-sm", "100%", 1, "searchMenu-element", "searchMenu-willIchNicht"], ["placeholder", "Will ich nicht", 3, "label", "mappingFunction", "value", "enterPressed"], [1, "searchMenu-element", "favouriteCounter"], [3, "count", "showSelectedEvents"]],
       template: function SearchMenuComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1265,9 +1286,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "app-marked-event-counter", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("showSelectedEvents", function SearchMenuComponent_Template_app_marked_event_counter_showSelectedEvents_5_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "app-marked-event-counter", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("showSelectedEvents", function SearchMenuComponent_Template_app_marked_event_counter_showSelectedEvents_6_listener($event) {
             return ctx.showSelectedEvents($event);
           });
 
@@ -1287,7 +1312,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("label", "Will ich nicht")("mappingFunction", ctx.suggestForInput);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("count", ctx.count);
         }
