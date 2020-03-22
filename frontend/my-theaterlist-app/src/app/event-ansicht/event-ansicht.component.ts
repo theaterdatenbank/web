@@ -47,6 +47,11 @@ export class EventAnsichtComponent implements OnInit {
   }
 
   checkProvider($event: string) {
-    this.eventCounter = this.checkedEvents.push($event)
+    if (this.checkedEvents.indexOf($event) >= 0) {
+      this.checkedEvents = this.checkedEvents.filter(ce => ce != $event)
+      this.eventCounter = this.checkedEvents.length;
+    } else {
+      this.eventCounter = this.checkedEvents.push($event);
+    }
   }
 }

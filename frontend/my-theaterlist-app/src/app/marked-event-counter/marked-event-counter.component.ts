@@ -9,9 +9,11 @@ export class MarkedEventCounterComponent implements OnInit {
 
   @Input("count")
   public count: number;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.count = 0;
   }
 
 }
