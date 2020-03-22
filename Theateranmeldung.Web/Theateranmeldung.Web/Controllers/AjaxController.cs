@@ -294,6 +294,28 @@ René Pape",
                 Thumbnail = "8"
             });
 
+            _eventRepository.AddEvent(new Event
+            {
+                Approved = true,
+                AvailableFrom = new DateTime(2020, 03, 23),
+                AvailableTil = new DateTime(2020, 03, 24),
+                EventDate = new DateTime(2020, 03, 23, 00, 30, 0),
+                EventName = "Hoffmanns Erzählungen",
+                Subtitle = "Operette von Offenbach",
+                EventText = @"Les contes d’Hoffmann hat keine Ouvertüre im eigentlichen Sinn. Die Oper beginnt mit wenigen Takten einer einleitenden Musik, deren Thematik sich in der ganzen Oper nicht wiederholt, und mündet direkt in den ersten Akt, in welchem die Muse den Zuhörer darüber in Kenntnis setzt, dass sie beabsichtigt, Hoffmann von seinem unglücklichen Liebesleben abzulenken und zur Literatur zurückzuführen.
+
+Auf diesen erklärenden ersten Akt folgen die drei Mittelakte mit den voneinander inhaltlich unabhängigen Erzählungen Hoffmanns. Der rote Faden ist hierbei der kompositorische Kniff, die Protagonisten der Erzählungen jeweils von denselben Interpreten singen zu lassen (die vier Geliebten Hoffmanns, die vier Widersacher sowie die vier Dienerrollen). Den Abschluss der Oper bildet der fünfte Akt, welcher sich zeitlich an den ersten anschließt. Hier besinnt sich Hoffmann auf die Kunst und gibt sich der Muse hin.",
+                Length = new TimeSpan(3, 50, 0),
+                Genre = "Operette",
+                StreamingLink = "https://www.metopera.org/user-information/nightly-met-opera-streams/",
+                Organisation = new Organiser
+                {
+                    Name = "Semperoper"
+                },
+                Thumbnail = "9"
+            });
+
+
 
             _eventRepository.AddGenre(new Genre { Description = "Oper" });
             _eventRepository.AddGenre(new Genre { Description = "Operette" });
