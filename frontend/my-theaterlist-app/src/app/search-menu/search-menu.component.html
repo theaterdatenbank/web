@@ -13,6 +13,6 @@
                      (value)="willIchNichtValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
-  <app-marked-event-counter [count]="this.count"></app-marked-event-counter>
+  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
 
 </div>

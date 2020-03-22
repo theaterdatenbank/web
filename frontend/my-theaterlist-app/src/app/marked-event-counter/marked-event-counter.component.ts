@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-marked-event-counter',
@@ -9,6 +9,9 @@ export class MarkedEventCounterComponent implements OnInit {
 
   @Input("count")
   public count: number;
+
+  @Output("showSelectedEvents")
+  public showSelectedEvents: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
   }
 
@@ -16,4 +19,7 @@ export class MarkedEventCounterComponent implements OnInit {
     this.count = 0;
   }
 
+  getSelectedEvents() {
+    this.showSelectedEvents.emit("show")
+  }
 }

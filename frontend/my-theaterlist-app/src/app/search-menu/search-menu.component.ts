@@ -14,6 +14,8 @@ export class SearchMenuComponent implements OnInit, OnDestroy {
 
   @Output()
   public gefundeneEvents: EventEmitter<Event[]> = new EventEmitter<Event[]>();
+  @Output("showCheckboxedEvents")
+  public showCheckboxedEvents: EventEmitter<any> = new EventEmitter<any>();
 
   @Input("count")
   count: number;
@@ -50,5 +52,9 @@ export class SearchMenuComponent implements OnInit, OnDestroy {
         map(result => result.response as Event[])
       )
       .subscribe(events => this.gefundeneEvents.emit(events));
+  }
+
+  showSelectedEvents($event: any) {
+    this.showCheckboxedEvents.emit($event);
   }
 }
