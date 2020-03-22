@@ -1,18 +1,25 @@
-<div class="searchMenu-flex-container">
-  <app-auto-complete class="searchMenu-element searchMenu-willIch"
-                     [label]="'Will ich'"
+<div
+  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start"   fxLayout.lt-sm="column"
+  class="searchMenu-flex-container">
+  <div class="searchMenu-element searchMenu-willIch" fxFlex.lt-md="0 1 calc(50% - 32px)"
+       fxFlex.lt-sm="100%">
+  <app-auto-complete [label]="'Will ich'"
                      placeholder="Will ich"
                      [mappingFunction]="suggestForInput"
                      (value)="willIchValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
-  <app-auto-complete class="searchMenu-element searchMenu-willIchNicht"
-                     [label]="'Will ich nicht'"
+  </div>
+  <div class="searchMenu-element searchMenu-willIchNicht" fxFlex.lt-md="0 1 calc(50% - 32px)"
+       fxFlex.lt-sm="100%">
+  <app-auto-complete [label]="'Will ich nicht'"
                      placeholder="Will ich nicht"
                      [mappingFunction]="suggestForInput"
                      (value)="willIchNichtValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
-  <app-marked-event-counter [count]="this.count"></app-marked-event-counter>
+  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
 
 </div>
+
+

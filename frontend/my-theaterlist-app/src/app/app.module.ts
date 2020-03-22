@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {AppComponent} from './app.component';
 import {SearchMenuComponent} from './search-menu/search-menu.component';
@@ -23,16 +24,17 @@ import {MarkedEventCounterComponent} from './marked-event-counter/marked-event-c
     EinzelnesEventComponent,
     MarkedEventCounterComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        FormsModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatAutocompleteModule,
-        MatCheckboxModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    FlexLayoutModule,
+    MatCheckboxModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

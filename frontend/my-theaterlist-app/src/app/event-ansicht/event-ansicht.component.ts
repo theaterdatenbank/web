@@ -11,7 +11,8 @@ import {TimeSpan} from '../einzelnes-event/TimeSpan';
 export class EventAnsichtComponent implements OnInit {
 
   public alleEvents: Event[];
-  private checkedEvents: string[] = [];
+  private checkedEvents: Event[] = [];
+  private savedEvents: Event[] = [];
 
   @Output()
   public eventCounter: number;
@@ -43,15 +44,33 @@ export class EventAnsichtComponent implements OnInit {
   }
 
   public updateAlleEvents($event: Event[]) {
+    if (this.savedEvents.length < this.alleEvents.length) {
+      this.savedEvents = this.alleEvents;
+    }
     this.alleEvents = $event;
   }
 
   checkProvider($event: string) {
-    if (this.checkedEvents.indexOf($event) >= 0) {
-      this.checkedEvents = this.checkedEvents.filter(ce => ce != $event)
+    let event = this.alleEvents.filter(evt => evt.eventName == $event)[0];
+
+    if (this.checkedEvents.indexOf(event) >= 0) {
+      this.checkedEvents = this.checkedEvents.filter(ce => ce.eventName != event.eventName)
       this.eventCounter = this.checkedEvents.length;
     } else {
-      this.eventCounter = this.checkedEvents.push($event);
+      this.eventCounter = this.checkedEvents.push(event);
+    }
+  }
+
+  showFavEvents($event: any) {
+    if ($event == "show") {
+      if (this.checkedEvents.length == 0) {
+        this.updateAlleEvents(this.savedEvents);
+      } else if (this.checkedEvents.length == this.alleEvents.length) {
+        this.updateAlleEvents(this.savedEvents);
+      } else {
+          this.updateAlleEvents(this.checkedEvents);
+      }
+
     }
   }
 }
