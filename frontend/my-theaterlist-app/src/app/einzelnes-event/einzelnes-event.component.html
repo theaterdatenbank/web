@@ -1,28 +1,35 @@
 <div class="dasEventContainer">
+  <div class="Event">
+    <div class="itemDate">
+      <div class="itemDateDay">27</div>
+      <div class="itemDateDay7">Thursday</div>
+      <div class="itemDateTime">20:00</div>
 
-  <div *ngIf="year>1990" class="itemDate">
-    <div class="itemDateDay">{{day}}</div>
-    <div class="itemDateMonth">{{month}}</div>
-  </div>
+      <div *ngIf="year>1990" class="itemDate">
+        <div class="itemDateDay">{{day}}</div>
+        <div class="itemDateMonth">{{month}}</div>
+      </div>
 
-  <div *ngIf="year<=1990" class="itemDate">
-    <div class="itemDateDay"> </div>
-    <div class="itemDateMonth"> </div>
-  </div>
+      <div *ngIf="year<=1990" class="itemDate">
+        <div class="itemDateDay"></div>
+        <div class="itemDateMonth"></div>
+      </div>
 
-  <div class="itemPicture" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
-    <img [src]="bildLink" alt="vorschau"/>
-  </div>
+      <div class="itemPicture" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
+        <img [src]="bildLink" alt="vorschau"/>
+      </div>
 
-  <div class="itemEventinfo" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
-    {{dasEvent.eventName}}
-    <p>{{dasEvent.subtitle}}</p>
+      <div class="itemEventinfo" (click)="this.isInfoMooreHidden =!this.isInfoMooreHidden">
+        {{dasEvent.eventName}}
+        <p>{{dasEvent.subtitle}}</p>
 
-    <div class="itemEventinfoMore" [hidden]="isInfoMooreHidden">{{dasEvent.eventText}}
+        <div class="itemEventinfoMore" [hidden]="isInfoMooreHidden">{{dasEvent.eventText}}
+        </div>
+      </div>
+
+      <div class="itemCheckbox">
+        <mat-checkbox value="{{dasEvent.eventName}}" (change)="checkboxChanged($event)"></mat-checkbox>
+      </div>
     </div>
-  </div>
-
-  <div class="itemCheckbox">
-    <mat-checkbox value="{{dasEvent.eventName}}" (change)="checkboxChanged($event)"></mat-checkbox>
   </div>
 </div>
