@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {EventAnsichtComponent} from './event-ansicht/event-ansicht.component';
 import {EinzelnesEventComponent} from './einzelnes-event/einzelnes-event.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MarkedEventCounterComponent} from './marked-event-counter/marked-event-counter.component';
 
 @NgModule({
   declarations: [
@@ -18,19 +20,20 @@ import {EinzelnesEventComponent} from './einzelnes-event/einzelnes-event.compone
     SearchMenuComponent,
     AutoCompleteComponent,
     EventAnsichtComponent,
-    EinzelnesEventComponent
+    EinzelnesEventComponent,
+    MarkedEventCounterComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+        MatCheckboxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

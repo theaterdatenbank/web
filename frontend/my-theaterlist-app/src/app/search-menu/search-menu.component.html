@@ -13,7 +13,6 @@
                      (value)="willIchNichtValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
-  <div class="searchMenu-element favouriteCounter">
-    0
-  </div>
+  <app-marked-event-counter [count]="this.count"></app-marked-event-counter>
+
 </div>
