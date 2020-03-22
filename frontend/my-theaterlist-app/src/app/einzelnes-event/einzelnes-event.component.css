@@ -22,6 +22,8 @@
     text-align:center;
     flex-grow:5%;
     float: left;
+    height: 100%;
+    font-family: Impact;
   }
 
       .itemDateDay{
@@ -57,6 +59,18 @@
       }
 .Check{
   flex-grow: 10%;
+.itemEventinfo {
+  order: 2;
+  background-color: #d6d2d3;
+  float: left;
+  overflow: none;
+  flex: 1 1 auto;
+}
+
+.itemEventinfoMore {
+  color: black;
+  order: 2;
+  white-space: pre-wrap;
 }
 
   .itemCheckbox{
