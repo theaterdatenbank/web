@@ -36,7 +36,7 @@ export class EinzelnesEventComponent implements OnInit {
   }
 
   public get bildLink() {
-    return this.dasEvent.thumbnail || "TODO: Default bild";
+    return this.dasEvent.thumbnail+".png";
   }
 
 
