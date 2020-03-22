@@ -71,19 +71,19 @@ namespace Theateranmeldung.Web.Services
             foreach (var wantedToken in wantedTokens)
             {
                 firstFilter = builder.Or(firstFilter, 
-                    builder.Regex(m => m.EventName, new BsonRegularExpression(wantedToken)),
-                    builder.Regex(m => m.EventText, new BsonRegularExpression(wantedToken)),
-                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(wantedToken)),
-                    builder.Regex(m => m.Genre, new BsonRegularExpression(wantedToken)));
+                    builder.Regex(m => m.EventName, new BsonRegularExpression(wantedToken, "i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(wantedToken+"i")),
+                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(wantedToken, "i")),
+                    builder.Regex(m => m.Genre, new BsonRegularExpression(wantedToken, "i")));
             }
 
             foreach (var notWantedToken in notWantedTokens)
             {
                 firstFilter = builder.And(firstFilter, builder.Not(builder.Or(
-                    builder.Regex(m => m.EventName, new BsonRegularExpression(notWantedToken)),
-                    builder.Regex(m => m.EventText, new BsonRegularExpression(notWantedToken)),
-                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(notWantedToken)),
-                    builder.Regex(m => m.Genre, new BsonRegularExpression(notWantedToken)))));
+                    builder.Regex(m => m.EventName, new BsonRegularExpression(notWantedToken, "i")),
+                    builder.Regex(m => m.EventText, new BsonRegularExpression(notWantedToken + "i")),
+                    builder.Regex(m => m.Subtitle, new BsonRegularExpression(notWantedToken, "i")),
+                    builder.Regex(m => m.Genre, new BsonRegularExpression(notWantedToken, "i")))));
 
             }
 
