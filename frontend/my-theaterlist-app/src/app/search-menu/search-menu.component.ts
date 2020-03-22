@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ajaxGet} from 'rxjs/internal-compatibility';
 import {map, take} from 'rxjs/operators';
@@ -14,6 +14,9 @@ export class SearchMenuComponent implements OnInit, OnDestroy {
 
   @Output()
   public gefundeneEvents: EventEmitter<Event[]> = new EventEmitter<Event[]>();
+
+  @Input("count")
+  count: number;
   public willIchValue: string;
   public willIchNichtValue: string;
 

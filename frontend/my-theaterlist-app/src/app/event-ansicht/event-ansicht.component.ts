@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Component, OnInit, Output} from '@angular/core';
 import {Event} from '../einzelnes-event/Event';
 import {Organiser} from '../einzelnes-event/Organiser';
 import {TimeSpan} from '../einzelnes-event/TimeSpan';
@@ -12,6 +11,10 @@ import {TimeSpan} from '../einzelnes-event/TimeSpan';
 export class EventAnsichtComponent implements OnInit {
 
   public alleEvents: Event[];
+  private checkedEvents: string[];
+
+  @Output()
+  public eventCounter: number;
 
   constructor() {
     this.alleEvents = [
@@ -41,5 +44,9 @@ export class EventAnsichtComponent implements OnInit {
 
   public updateAlleEvents($event: Event[]) {
     this.alleEvents = $event;
+  }
+
+  checkProvider($event: string) {
+    this.eventCounter = this.checkedEvents.push($event)
   }
 }
