@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {AppComponent} from './app.component';
 import {SearchMenuComponent} from './search-menu/search-menu.component';
@@ -27,7 +28,8 @@ import {EinzelnesEventComponent} from './einzelnes-event/einzelnes-event.compone
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

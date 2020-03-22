@@ -4,27 +4,37 @@
   justify-content: space-around;
   align-items: flex-end;
   padding: 5px;
+  width: 100%;
 }
+
 
 .searchMenu-element {
   border-radius: 8px;
   border: 2px solid;
   padding-left: 5px;
   padding-right: 5px;
-
+  margin: 5px;
+  flex-wrap: wrap;
 }
 
 .searchMenu-willIch {
   border-color: #00b649;
   background: #59c55e;
+  flex-grow: 1;
+  flex-basis: auto;
+
 }
 
 .searchMenu-willIchNicht {
   border-color: #ef0002;
   background: #fb9296;
+  flex-grow: 1;
+  flex-basis: auto;
+
 }
 
 .favouriteCounter {
+  flex-grow: 0;
   border-color: black;
   font-family: Impact;
   font-size: xx-large;
