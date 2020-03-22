@@ -1,8 +1,8 @@
-<div
-  fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flex-start"   fxLayout.lt-sm="column" fxFlex="1 1 0"
-  class="searchMenu-flex-container">
-  <div class="searchMenu-element searchMenu-willIch" fxFlex.lt-md="1 1 0"
-       fxFlex.lt-sm="100%">
+<div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="end"
+  class="searchMenu-flex-container" >
+  <div fxLayout="row wrap" fxLayoutGap="5px" fxFlex>
+
+  <div class="searchMenu-element searchMenu-willIch" fxFlex>
   <app-auto-complete [label]="'Will ich'"
                      placeholder="Will ich"
                      [mappingFunction]="suggestForInput"
@@ -10,17 +10,18 @@
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
   </div>
-  <div class="searchMenu-element searchMenu-willIchNicht" fxFlex.lt-md="1 1 0"
-       fxFlex.lt-sm="100%">
+  <div class="searchMenu-element searchMenu-willIchNicht" fxFlex>
   <app-auto-complete [label]="'Will ich nicht'"
                      placeholder="Will ich nicht"
                      [mappingFunction]="suggestForInput"
                      (value)="willIchNichtValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
+  </div>
+  </div>
 
+<div class="searchMenu-element favouriteCounter" fxFlex="nogrow">
+  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
 </div>
 
-<div class="searchMenu-element favouriteCounter">
-  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
 </div>
