@@ -17,6 +17,7 @@
   </div>
 
   <div class="itemCheckbox">
+    <mat-checkbox id="checkEvent" value="{{dasEvent.eventName}}" (change)="checkboxChanged($event)"></mat-checkbox>
     <input type="checkbox" id="merken" name="merken" value={{dasEvent.eventName}}>
   </div>
 

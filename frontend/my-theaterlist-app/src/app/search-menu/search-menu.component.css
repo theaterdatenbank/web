@@ -22,11 +22,3 @@
   border-color: #ef0002;
   background: #fb9296;
 }
-
-.favouriteCounter{
-  border-color: black;
-  font-family: Impact;
-  font-size: xx-large;
-  display: flex;
-  padding: 10px;
-}

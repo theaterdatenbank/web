@@ -44,4 +44,8 @@ export class SearchMenuComponent implements OnInit, OnDestroy {
       )
       .subscribe(events => this.gefundeneEvents.emit(events));
   }
+
+  checkedThis($event: any) {
+    console.log($event)
+  }
 }
