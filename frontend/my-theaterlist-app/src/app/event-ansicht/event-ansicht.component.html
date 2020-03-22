@@ -1,4 +1,4 @@
-<app-search-menu (gefundeneEvents)="updateAlleEvents($event)" [count]="this.eventCounter"></app-search-menu>
+<app-search-menu (gefundeneEvents)="updateAlleEvents($event)" [count]="this.eventCounter" (showCheckboxedEvents)="showFavEvents($event)"></app-search-menu>
 
 <app-einzelnes-event *ngFor="let einzelnesEvent of alleEvents"
                      [dasEvent]="einzelnesEvent" (checkedEvent)="checkProvider($event)">
