@@ -23,7 +23,7 @@ namespace Theateranmeldung.Web.Controllers
         [HttpGet("events")]
         public List<Event> Events()
         {
-            return _eventRepository.GetEvents();
+            return _eventRepository.GetEvents().OrderBy(m => m.EventDate).ToList(); ;
         }
 
         [HttpGet("genres")]
@@ -35,7 +35,7 @@ namespace Theateranmeldung.Web.Controllers
         [HttpGet("events_filtered")]
         public List<Event> EventsFiltered(string wanted, string notwanted)
         {
-            return _eventRepository.GetEventsFiltered(wanted, notwanted);
+            return _eventRepository.GetEventsFiltered(wanted, notwanted).OrderBy(m => m.EventDate).ToList();
         }
 
         [HttpGet("createEvents")]
