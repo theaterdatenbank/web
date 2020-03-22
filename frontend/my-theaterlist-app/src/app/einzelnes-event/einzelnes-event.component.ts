@@ -21,13 +21,13 @@ export class EinzelnesEventComponent implements OnInit {
 
   public get day(){
     const date: Date = new Date(this.dasEvent.eventDate);
-    return date.getUTCDate();
+    return date.getUTCDate() + 1;
   }
 
   public get month(){
     const date: Date = new Date(this.dasEvent.eventDate);
     const months: string[] = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
-    return months[date.getUTCMonth() - 1];
+    return months[date.getUTCMonth()];
   }
 
   public get bildLink() {
