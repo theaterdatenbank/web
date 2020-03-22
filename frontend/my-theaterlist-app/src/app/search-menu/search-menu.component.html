@@ -1,5 +1,5 @@
 <div
-  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start"   fxLayout.lt-sm="column"
+  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start"   fxLayout.lt-sm="column" fxFlex="1 1 0"
   class="searchMenu-flex-container">
   <div class="searchMenu-element searchMenu-willIch" fxFlex.lt-md="0 1 calc(50% - 32px)"
        fxFlex.lt-sm="100%">
@@ -18,8 +18,9 @@
                      (value)="willIchNichtValue = $event"
                      (enterPressed)="sucheAlles()"
   ></app-auto-complete>
-  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
 
 </div>
 
-
+<div class="searchMenu-element favouriteCounter">
+  <app-marked-event-counter [count]="this.count" (showSelectedEvents)="showSelectedEvents($event)"></app-marked-event-counter>
+</div>
