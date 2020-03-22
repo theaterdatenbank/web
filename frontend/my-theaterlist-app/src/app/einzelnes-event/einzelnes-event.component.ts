@@ -30,6 +30,11 @@ export class EinzelnesEventComponent implements OnInit {
     return months[date.getUTCMonth()];
   }
 
+  public get year(){
+    const date: Date = new Date(this.dasEvent.eventDate);
+    return date.getUTCFullYear();
+  }
+
   public get bildLink() {
     return this.dasEvent.thumbnail || "TODO: Default bild";
   }

@@ -11,7 +11,7 @@
 
 .itemDate {
   order: 0;
-  background-color: aqua;
+  background-color: #cce5ff;
   height: 100%;
   font-family: Impact;
 }
@@ -37,14 +37,14 @@
 
 .itemEventinfo {
   order: 2;
-  background-color: blueviolet;
+  background-color: #cce5ff;
   float: left;
   overflow: none;
   flex: 1 1 auto;
 }
 
 .itemEventinfoMore {
-  color: aqua;
+  color: #cce5ff;
   order: 2;
   white-space: pre-wrap;
 }
